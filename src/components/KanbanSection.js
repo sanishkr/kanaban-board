@@ -8,7 +8,7 @@ export default ({name, members, filteredTasks, openModalcb}) => {
         <div className="tasks">
           {
             filteredTasks.map((task) => 
-            <div className="task">
+            <div key={task.id} className="task">
                 <span className="taskdescription">{task.description}</span>
                 <span className="taskdue">{task.dueDate}</span>
                 <span className="taskassigned">{members.find(m => m.id == task.assignee).name}</span>

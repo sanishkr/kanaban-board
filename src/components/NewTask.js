@@ -20,11 +20,13 @@ export default ({id, desc='', due='', assigneeid, state, members, openModalcb, a
           <input placeholder="task Description" value={description || ""} onChange={(e) => setDescription(e.target.value)} />
           <input type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
           <select onChange={(e) => setTaskState(e.target.value)}>
+            <option value="none" disabled selected>none</option>
             <option value="Planned">Planned</option>
             <option value="Started">Started</option>
             <option value="Done">Done</option>
           </select>
           <select onChange={(e) => setAssigneeId(e.target.value)}>
+            <option value="none" disabled selected>none</option>
             {
               members.map((m) => 
                 <option value={m.id} key={m.id}>{m.name}</option>      
